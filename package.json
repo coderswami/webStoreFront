@@ -1,0 +1,36 @@
+{
+  "name": "web-store",
+  "version": "1.0.0",
+  "description": "sample online store",
+  "main": "server/index.js",
+  "private": true,
+  "dependencies": {
+    "body-parser": "~1.5.0",
+    "composable-middleware": "^0.3.0",
+    "compression": "~1.0.1",
+    "cookie-parser": "~1.0.1",
+    "ejs": "~0.8.4",
+    "errorhandler": "~1.0.0",
+    "express": "~4.9.0",
+    "express-session": "~1.0.2",
+    "lodash": "~2.4.1",
+    "method-override": "~1.0.0",
+    "morgan": "~1.0.0",
+    "request": "^2.69.0",
+    "request-context": "~0.1.1",
+    "serve-favicon": "~2.0.1"
+  },
+  "scripts": {
+    "start": "node bin/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/subhg/webStoreFront.git"
+  },
+  "keywords": [
+    "webstore",
+    "onlinestore"
+  ],
+  "author": "Subhankar Goswami <subhankar@tradeleaves.com> (http://tradeleaves.com)",
+  "license": "ISC"
+}
