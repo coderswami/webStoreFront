@@ -9,7 +9,6 @@ module.exports = dataSources
 dataSources.processServiceRequest = function(cb){
     var host = 'localhost';
     var port = '9898';
-    // var service = '/api/catalogs';
     var apiUrl = 'http://'+host+':'+port;
     return cb.apply(this,[apiUrl]);
 };

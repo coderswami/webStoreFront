@@ -2,18 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3890b279-bd32-4735-b408-7b50b373acd8" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/styles/custom.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/assets/images/apple ipad air detailview.jpeg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/assets/images/apple ipad air.jpeg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/assets/images/apple ipad mini detailview.jpeg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/assets/images/apple ipad mini.jpeg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/assets/images/apple_iphone5s detailview.jpeg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/assets/images/apple_iphone5s.jpeg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/assets/images/apple_iphone6 detailview.jpeg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/assets/images/apple_iphone6.jpeg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/assets/images/bingo U8 smart watch deails view.jpeg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/assets/images/bingo U8 smart watch.jpeg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/assets/images/motorolla moto 360 smart watch detail view.jpeg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/assets/images/motorolla moto 360 smart watch.jpeg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/assets/images/motoxplay.jpeg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/assets/images/motoxplay_detailsview.jpeg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/assets/images/samsung note pro tablet detailview.jpeg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/assets/images/samsung note pro tablet.jpeg" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/npm-debug.log" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/app/app.controller.js" afterPath="$PROJECT_DIR$/client/app/app.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/app/app.js" afterPath="$PROJECT_DIR$/client/app/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/app/catalog/catalog.controller.js" afterPath="$PROJECT_DIR$/client/app/catalog/catalog.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/app/catalog/catalog.js" afterPath="$PROJECT_DIR$/client/app/catalog/catalog.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/app/catalog/catalog.service.js" afterPath="$PROJECT_DIR$/client/app/catalog/catalog.service.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/app/catalog/templates/product.list.tmpl.html" afterPath="$PROJECT_DIR$/client/app/catalog/templates/product.list.tmpl.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/index.html" afterPath="$PROJECT_DIR$/client/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/styles/styles.css" afterPath="$PROJECT_DIR$/client/styles/styles.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/api/catalog/catalog.controller.js" afterPath="$PROJECT_DIR$/server/api/catalog/catalog.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/api/catalog/index.js" afterPath="$PROJECT_DIR$/server/api/catalog/index.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/datasources/catalogDS.js" afterPath="$PROJECT_DIR$/server/datasources/catalogDS.js" />
     </list>
     <ignored path="webStoreFront.iws" />
@@ -68,8 +74,8 @@
       <file leaf-file-name="catalogDS.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server/datasources/catalogDS.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="412">
-              <caret line="46" column="68" selection-start-line="46" selection-start-column="68" selection-end-line="46" selection-end-column="68" />
+            <state relative-caret-position="150">
+              <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -141,7 +147,6 @@
         <option value="$PROJECT_DIR$/client/app/catalog/catalog.service.js" />
         <option value="$PROJECT_DIR$/client/app/catalog/catalog.controller.js" />
         <option value="$PROJECT_DIR$/server/api/catalog/index.js" />
-        <option value="$PROJECT_DIR$/server/datasources/catalogDS.js" />
         <option value="$PROJECT_DIR$/server/api/catalog/catalog.controller.js" />
         <option value="$PROJECT_DIR$/client/app/catalog/templates/product.list.tmpl.html" />
         <option value="$PROJECT_DIR$/client/app/catalog/templates/catalog.tmpl.html" />
@@ -151,6 +156,7 @@
         <option value="$PROJECT_DIR$/client/styles/styles.css" />
         <option value="$PROJECT_DIR$/client/styles/custom.css" />
         <option value="$PROJECT_DIR$/client/index.html" />
+        <option value="$PROJECT_DIR$/server/datasources/catalogDS.js" />
       </list>
     </option>
   </component>
@@ -515,12 +521,12 @@
       <workItem from="1459082725997" duration="3934000" />
       <workItem from="1459091390561" duration="146000" />
       <workItem from="1459091665125" duration="831000" />
-      <workItem from="1459093245782" duration="26486000" />
+      <workItem from="1459093245782" duration="26734000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34778000" />
+    <option name="totallyTimeSpent" value="35026000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="40" y="63" width="1400" height="794" extended-state="0" />
@@ -941,8 +947,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server/datasources/catalogDS.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="412">
-          <caret line="46" column="68" selection-start-line="46" selection-start-column="68" selection-end-line="46" selection-end-column="68" />
+        <state relative-caret-position="150">
+          <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
           <folding />
         </state>
       </provider>
