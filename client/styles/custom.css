@@ -1,0 +1,24 @@
+.custom-logo-font {
+    font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+    line-height: 1;
+    color: #6ab344;
+    font-weight: 600;
+    font-size: 28px;
+}
+
+.custom-logo-font-alt {
+    color: #f3f3f3;
+}
+
+.custom-fab {
+    background: #6ab344 !important;
+    color: #f3f3f3 !important;
+}
+
+.custom-fab .material-icons {
+    color: #f3f3f3 !important;
+}
+
+.custom-pointer {
+    cursor: pointer;
+}

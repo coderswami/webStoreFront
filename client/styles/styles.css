@@ -172,7 +172,7 @@ a img{
 
 .android-be-together-section {
   position: relative;
-  height: 800px;
+  height: 400px;
   width: auto;
   background-color: #f3f3f3;
   background: url('images/slide01.jpg') center 30% no-repeat;
@@ -214,10 +214,11 @@ a img{
 }
 
 .android-screens {
-  text-align: right;
+  text-align: center;
   width: 100%;
   white-space: nowrap;
   overflow-x: auto;
+  margin-top: 10px;
 }
 
 .android-screen {

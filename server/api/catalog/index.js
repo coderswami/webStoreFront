@@ -38,5 +38,11 @@ router.route('/')
 router.route('/active/:countryCode')
     .get(controller.getActiveCatalog);
 
+router.route('/:id/categories')
+    .get(controller.getCategories);
+
+router.route('/:id/categories/:categoryId/products')
+    .get(controller.getProducts);
+
 router.route('/' + controller.paramString)
     .get(controller.index);

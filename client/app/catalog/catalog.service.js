@@ -22,6 +22,19 @@ angular.module('onlineStoreApp')
             'getCategoriesByCatalog': {
                 method: 'GET',
                 params: {'controller': 'categories'},
+                isArray: true,
+                transformResponse: function (data) {
+                    data = angular.fromJson(data);
+                    return data;
+                }
+            },
+            'getProductsByCategory': {
+                method: 'GET',
+                params: {
+                    'controller': 'categories',
+                    'controller2': 'products'
+                },
+                isArray: true,
                 transformResponse: function (data) {
                     data = angular.fromJson(data);
                     return data;

@@ -51,35 +51,29 @@ CatalogController.prototype = {
     constructor: CatalogController,
 
     index : function(req,res){
-        var categoryId = req.params.countryCode;
-        var categoryName = req.query.name;
-        if(categoryName){
-
-            CategoryAPI.searchCategories(1.0,'name:'+categoryName,null,function(err, response, body){
-                console.log(body);
-                res.json(body);
-            });
-        }else{
-
-            if(categoryId){
-                CategoryAPI.getSubCategories(1.0,categoryId,null,function(err, response, body){
-                    console.log(body);
-                    res.json(body.categoryDTO);
-                });
-            }else{
-                CategoryAPI.getRootSubCategories(1.0,null,function(err, response, body){
-                    console.log(body);
-                    res.json(body.categoryDTO);
-                });
-            }
-        }
-
-
+        console.log('In index method');
     },
 
     getActiveCatalog : function(req,res){
         var countryCode = req.params.countryCode;
         CatalogAPI.getActiveCatalogByCountry(countryCode,null,function(err, response, body){
+            console.log(body);
+            res.json(body);
+        });
+    },
+
+    getCategories : function(req,res){
+        var catalogId = req.params.id;
+        CatalogAPI.getCategoriesByCatalog(catalogId,null,function(err, response, body){
+            console.log(body);
+            res.json(body);
+        });
+    },
+
+    getProducts : function(req,res){
+        var categoryId = req.params.categoryId;
+        console.log(req.params);
+        CatalogAPI.getProductsByCategory(categoryId,null,function(err, response, body){
             console.log(body);
             res.json(body);
         });
