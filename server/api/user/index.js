@@ -15,7 +15,7 @@
 var router = require('express').Router();
 var contextService = require('request-context');
 var middleware = require('../../lib/middleware');
-var CatalogController = require('./catalog.controller');
+var UserController = require('./user.controller');
 //var auth = require('../../lib/auth/auth.service');
 
 // Export the configured express router for the catalog api routes
@@ -23,9 +23,9 @@ module.exports = router;
 
 /**
  * The api controller
- * @type {catalog:controller~CatalogController}
+ * @type {catalog:controller~UserController}
  */
-var controller = new CatalogController(router);
+var controller = new UserController(router);
 
 // register catalog route parameters, uncomment if needed
 // var registerCatalogParameters = require('./catalog.params');
@@ -35,20 +35,8 @@ var controller = new CatalogController(router);
 router.route('/')
     .get(controller.index);
 
-router.route('/countries/:countryCode')
-    .get(controller.getCountryByCode);
+router.route('/:id')
+    .get(controller.getUserProfile);
 
-router.route('/countries/:id/states')
-    .get(controller.getStatesByCountry);
-
-router.route('/active/:countryCode')
-    .get(controller.getActiveCatalog);
-
-router.route('/:id/categories')
-    .get(controller.getCategories);
-
-router.route('/:id/categories/:categoryId/products')
-    .get(controller.getProducts);
-
-router.route('/' + controller.paramString)
-    .get(controller.index);
+router.route('/address')
+    .put(controller.saveUserAddress);

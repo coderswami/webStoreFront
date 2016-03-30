@@ -52,7 +52,7 @@
             <span class="android-mobile-title mdl-layout-title">
                 <img class="android-logo-image" src="assets/images/android-logo.png">
             </span>
-            <div class="custom-pointer android-more-button material-icons mdl-badge mdl-badge--overlap" data-badge="1" ng-click="">shopping_cart</div>
+            <div class="custom-pointer android-more-button material-icons mdl-badge mdl-badge--overlap" data-badge="{{cart.items.length}}" ng-click="">shopping_cart</div>
             <!--<button class="android-more-button mdl-button mdl-js-button mdl-button&#45;&#45;icon mdl-js-ripple-effect" id="more-button">-->
                 <!--<i class="material-icons">more_vert</i>-->
             <!--</button>-->
@@ -164,7 +164,7 @@
                             <!--<i class="material-icons">chevron_right</i>-->
                         <!--</a>-->
                         <div class="mdl-layout-spacer"></div>
-                        <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored">
+                        <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored" ng-click="updateCart(product)">
                             <i class="material-icons">chevron_right</i>
                         </button>
                     </div>
@@ -215,6 +215,9 @@
 
         </footer>
     </div>
+    <div href="" id="view-source" ng-click="createPayment(cart)" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--accent-contrast">
+        Place Order
+    </div>
 </div>
 <!--vendor scripts-->
 <script src="bower_components/angular/angular.js"></script>
@@ -243,6 +246,7 @@
 <script src="app/components/auth/auth.service.js"></script>
 <script src="app/components/auth/principal.service.js"></script>
 <script src="app/components/auth/authority.directive.js"></script>
+<script src="app/components/auth/user.service.js"></script>
 <script src="app/components/auth/services/account.service.js"></script>
 <script src="app/components/auth/services/activate.service.js"></script>
 <script src="app/components/auth/services/password.service.js"></script>
@@ -257,5 +261,9 @@
 <script src="app/catalog/catalog.controller.js"></script>
 <script src="app/catalog/catalog.service.js"></script>
 <script src="app/catalog/catalog.search.service.js"></script>
+<!--order-->
+<script src="app/order/order.js"></script>
+<script src="app/order/order.controller.js"></script>
+<script src="app/order/order.service.js"></script>
 </body>
 </html>

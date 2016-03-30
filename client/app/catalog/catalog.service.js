@@ -11,6 +11,23 @@ angular.module('onlineStoreApp')
                     return data;
                 }
             },
+            'getCountryByCode': {
+                method: 'GET',
+                params: {'id': 'countries'},
+                transformResponse: function (data) {
+                    data = angular.fromJson(data);
+                    return data;
+                }
+            },
+            'getStatesByCountry': {
+                method: 'GET',
+                params: {'id': 'countries', 'id2': 'states'},
+                isArray: true,
+                transformResponse: function (data) {
+                    data = angular.fromJson(data);
+                    return data;
+                }
+            },
             'getActiveCatalog': {
                 method: 'GET',
                 params: {'id': 'active'},

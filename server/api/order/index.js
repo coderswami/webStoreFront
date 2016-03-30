@@ -15,7 +15,7 @@
 var router = require('express').Router();
 var contextService = require('request-context');
 var middleware = require('../../lib/middleware');
-var CatalogController = require('./catalog.controller');
+var OrderController = require('./order.controller');
 //var auth = require('../../lib/auth/auth.service');
 
 // Export the configured express router for the catalog api routes
@@ -23,9 +23,9 @@ module.exports = router;
 
 /**
  * The api controller
- * @type {catalog:controller~CatalogController}
+ * @type {catalog:controller~OrderController}
  */
-var controller = new CatalogController(router);
+var controller = new OrderController(router);
 
 // register catalog route parameters, uncomment if needed
 // var registerCatalogParameters = require('./catalog.params');
@@ -33,22 +33,17 @@ var controller = new CatalogController(router);
 
 // register catalog routes
 router.route('/')
-    .get(controller.index);
+    .get(controller.index)
+    .post(controller.createOrder);
 
-router.route('/countries/:countryCode')
-    .get(controller.getCountryByCode);
+router.route('/type/cart/:cookie')
+    .get(controller.getCartOrder);
 
-router.route('/countries/:id/states')
-    .get(controller.getStatesByCountry);
+router.route('/item')
+    .put(controller.saveOrderItem);
 
-router.route('/active/:countryCode')
-    .get(controller.getActiveCatalog);
+router.route('/:id/payment')
+    .post(controller.createPayment);
 
-router.route('/:id/categories')
-    .get(controller.getCategories);
-
-router.route('/:id/categories/:categoryId/products')
-    .get(controller.getProducts);
-
-router.route('/' + controller.paramString)
-    .get(controller.index);
+router.route('/:id/shipment')
+    .post(controller.createShipment);

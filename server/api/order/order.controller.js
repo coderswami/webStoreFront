@@ -6,10 +6,10 @@
  */
 'use strict';
 
-var CatalogAPI = require('../../datasources/catalogDS');
+var OrderAPI = require('../../datasources/orderDS');
 var async = require('async');
 
-module.exports = CatalogController;
+module.exports = OrderController;
 
 //var ParamController = require('../../lib/controllers/param.controller');
 
@@ -29,7 +29,7 @@ module.exports = CatalogController;
  * @inherits ParamController
  * @see catalog:model~Catalog
  */
-function CatalogController(router) {
+function OrderController(router) {
     //ParamController.call(this, Catalog,  router);
 
     // modify select only properties
@@ -43,69 +43,74 @@ function CatalogController(router) {
 }
 
 // define properties for the CatalogController here
-CatalogController.prototype = {
+OrderController.prototype = {
 
     /**
      * Set our own constructor property for instanceof checks
      * @private
      */
-    constructor: CatalogController,
+    constructor: OrderController,
 
     index : function(req,res){
         console.log('In index method');
     },
 
-    getCountryByCode : function(req,res){
-        var countryCode = req.params.countryCode;
-        CatalogAPI.getCountryByCode(countryCode,null,function(err, response, body){
-            console.log(body);
-            res.json(body);
-        });
-    },
-
-    getStatesByCountry : function(req,res){
-        var countryId = req.params.id;
-        CatalogAPI.getStatesByCountry(countryId,null,function(err, response, body){
-            console.log(body);
-            res.json(body);
-        });
-    },
-
-    getActiveCatalog : function(req,res){
-        var countryCode = req.params.countryCode;
-        CatalogAPI.getActiveCatalogByCountry(countryCode,null,function(err, response, body){
-            console.log(body);
-            res.json(body);
-        });
-    },
-
-    getCategories : function(req,res){
-        var catalogId = req.params.id;
-        CatalogAPI.getCategoriesByCatalog(catalogId,null,function(err, response, body){
-            console.log(body);
-            res.json(body);
-        });
-    },
-
-    getProducts : function(req,res){
-        var categoryId = req.params.categoryId;
-        CatalogAPI.getProductsByCategory(categoryId,null,function(err, response, body){
-            async.forEachOf(body,function(value, key, callback) {
-                CatalogAPI.getProductAttributesByProduct(value.id,null,function(err, response, body) {
-                    value.attributes = body;
-                    CatalogAPI.getActiveProductPriceByProduct(value.id,null,function(err, response, body) {
-                        value.price = body;
-                        callback();
-                    });
+    getCartOrder : function(req,res){
+        var cookie = req.params.cookie;
+        async.waterfall([
+            function(callback){
+                OrderAPI.getCartOrder(cookie,null,function(err, response, body){
+                    console.log(body);
+                    callback(null, body);
                 });
-            }, function(err){
-                if (err) console.error(err.message);
-                console.log(body);
-                res.json(body);
-            });
+            },
+            function(order, callback){
+                if(order != undefined || order != null) {
+                    OrderAPI.getOrderItemsByOrder(order.id, null, function (err, response, body) {
+                        console.log(body);
+                        order.items = body;
+                        callback(null, order);
+                    });
+                }else {
+                    callback(null, order);
+                }
+            }
+        ], function(err, results){
+            if (err) console.error(err.message);
+            console.log(results);
+            res.json(results);
+        });
+    },
+
+    createOrder: function(req,res){
+        OrderAPI.createOrder(req.body,null,function(err, response, body){
+            console.log(body);
+            res.json(body);
+        });
+    },
+
+    saveOrderItem: function(req,res){
+        OrderAPI.saveOrderItem(req.body,null,function(err, response, body){
+            console.log(body);
+            res.json(body);
+        });
+    },
+
+    createPayment: function(req,res){
+        var orderId = req.params.id;
+        OrderAPI.createPayment(orderId,req.body,null,function(err, response, body){
+            console.log(body);
+            res.json(body);
+        });
+    },
+
+    createShipment: function(req,res){
+        var orderId = req.params.id;
+        OrderAPI.createShipment(orderId,req.body,null,function(err, response, body){
+            console.log(body);
+            res.json(body);
         });
     }
-
 };
 
 // inherit from ParamController
