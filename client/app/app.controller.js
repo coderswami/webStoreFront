@@ -102,15 +102,26 @@ angular.module('onlineStoreApp')
                 });
             }else {
                 console.log($scope.cart);
-                var orderItem = {};
+                var orderItem = null;
                 if($scope.cart.items.length > 0) {
                     for(var i in $scope.cart.items) {
+                        console.log($scope.cart.items);
+                        console.log(product);
                         if($scope.cart.items[i].product.id == product.id) {
                             orderItem = $scope.cart.items[i];
                             orderItem.quantity += 1;
                             orderItem.price = orderItem.quantity * product.price.salesPrice;
                             break;
                         }
+                    }
+                    if(orderItem == null) {
+                        orderItem = {
+                            'orderHeader': $scope.cart,
+                            'product': product,
+                            'quantity': 1,
+                            'price': product.price.salesPrice,
+                            'status': product.status
+                        };
                     }
                 }else {
                     orderItem = {
@@ -123,9 +134,8 @@ angular.module('onlineStoreApp')
                 }
                 Order.saveOrderItem(orderItem).$promise.then(function(item) {
                     console.log(item);
-                    if(item.product.id != product.id) {
-                        $scope.cart.items.push(item);
-                    }
+                    console.log(product);
+                    $scope.cart.items.push(item);
                 });
             }
         };

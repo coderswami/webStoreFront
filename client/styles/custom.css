@@ -22,3 +22,11 @@
 .custom-pointer {
     cursor: pointer;
 }
+
+.custom-product-attr-name {
+    font-weight: 500 !important;
+}
+
+.custom-product-status {
+    color: #6ab344 !important;
+}
