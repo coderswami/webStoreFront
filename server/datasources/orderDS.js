@@ -91,7 +91,7 @@ dataSources.createPayment = function(orderId,payment,headers,cb){
 dataSources.createShipment = function(orderId,shipment,headers,cb){
     return this.processServiceRequest(function(apiUrl,err){
         if(!err){
-            var url = apiUrl+'/api/payments/order/'+orderId;
+            var url = apiUrl+'/api/shipments/order/'+orderId;
             if(headers && headers !== null){
                 request.post({url:url,headers:headers,json:true,body:shipment},cb);
             }else{

@@ -22,6 +22,18 @@ angular.module('onlineStoreApp')
 
         $scope.loadGuestUser();
 
+        $scope.showCart = false;
+
+        $scope.toggleCartView = function() {
+            if($scope.showCart) {
+                $scope.showCart = false;
+            }else {
+                if($scope.cart!=null) {
+                    $scope.showCart = true;
+                }
+            }
+        }
+
         $scope.country = null;
         $scope.states = null;
         $scope.catalog = {};
@@ -168,11 +180,17 @@ angular.module('onlineStoreApp')
                 'country': $scope.country,
                 'state': $scope.state
             };
-            $scope.shipment.status = 'IN_PROCESS';
-            $scope.shipment.address = address;
-            Order.createShipment({id: order.id},$scope.shipment).$promise.then(function(result) {
+            User.saveUserAddress(address).$promise.then(function(result) {
                 console.log(result);
-                $scope.payment = result;
+                $scope.shipment.address = result;
+                $scope.shipment.type = 'NORMAL';
+                $scope.shipment.status = 'IN_PROCESS';
+                console.log($scope.shipment);
+                Order.createShipment({id: order.id},$scope.shipment).$promise.then(function(result) {
+                    console.log(result);
+                    $scope.shipment = result;
+                });
             });
+
         };
     });
